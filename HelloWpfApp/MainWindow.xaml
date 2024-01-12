@@ -25,7 +25,7 @@
                 <Border CornerRadius="30" Background="#7163ba" Margin="20">
                     <Grid>
                         <StackPanel VerticalAlignment="Top">
-                            <Button Style="{StaticResource menuButton}">
+                            <Button Style="{StaticResource topMenuButton}">
                                 <Icons:PackIconMaterial Kind="BellCheckOutline" Style="{StaticResource menuButtonIcon}"/>
                             </Button>
                             <Separator Background="#877cc5" Margin="20 0 20 10" Height="0.8"/>
@@ -47,6 +47,25 @@
                         </StackPanel>
                     </Grid>
                 </Border>
+
+                <Grid Grid.Column="1" Margin="5 20 25 20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="7 10 0 25">
+                        <TextBlock Text="Primary" Foreground="#797295" FontSize="13"/>
+                        <TextBlock Text="Dashboard" Style="{StaticResource titleText}"/>
+     
+                    </StackPanel>
+                </Grid>
             </Grid>
       
         </Border>
