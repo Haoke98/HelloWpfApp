@@ -85,6 +85,11 @@
                                                     Margin="15 0 0 0"/>
 
                         </Grid>
+                        <Ellipse Width="45" Height="45" Margin="15 0 7 0" Grid.Column="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/Images/avatar2.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
                     </Grid>
                 </Grid>
             </Grid>
