@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:HelloWpfApp"
       
         Title="MainWindow" Height="760" Width="1280" Background="Transparent" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
-
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
     <Border Background="#cfd5e5" CornerRadius="40" BorderThickness="2" BorderBrush="#ebedf3" Padding="20" MouseDown="Border_MouseDown">
         <Border CornerRadius="40">
             <Border.Background>
@@ -63,11 +65,30 @@
                     <StackPanel Margin="7 10 0 25">
                         <TextBlock Text="Primary" Foreground="#797295" FontSize="13"/>
                         <TextBlock Text="Dashboard" Style="{StaticResource titleText}"/>
-     
+
                     </StackPanel>
+                    <Grid Grid.Column="2" VerticalAlignment="Top" Margin="0 10 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock/>
+                        <Grid>
+                            <TextBlock Margin="40 0 0 0" VerticalAlignment="Center" 
+                                       Foreground="#594f7f" IsHitTestVisible="False" 
+                                       Panel.ZIndex="1" Text="Search ..." 
+                                       Visibility="{Binding ElementName=txtSearch,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
+                            <TextBox x:Name="txtSearch" Style="{StaticResource searchTextBox}"/>
+
+                            <Icons:PackIconMaterial Kind="Magnify" Width="14" Height="14" Foreground="#594f7f" 
+                                                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                    Margin="15 0 0 0"/>
+
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
-      
+                
         </Border>
     </Border>
 </Window>
